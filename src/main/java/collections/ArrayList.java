@@ -3,7 +3,7 @@ package collections;
 public class ArrayList {
 
 
-    private static final int MAX_EXPANSION = 10;
+    private static final int MAX_EXPANSION = 10000;
     private static final int MAX_INTIAL_CAPACITY = 10000;
     private int[] data;
     private int numElements;
@@ -12,7 +12,11 @@ public class ArrayList {
 
 
     public ArrayList(int capacity) {
-        this.capacity = capacity;
+        if(capacity <= MAX_INTIAL_CAPACITY && capacity > 0){
+            this.capacity = capacity;
+        }else if (capacity > MAX_INTIAL_CAPACITY) {
+            this.capacity = MAX_INTIAL_CAPACITY;
+        }
         data = new int[capacity];
     }
 
