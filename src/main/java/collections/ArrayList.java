@@ -21,7 +21,6 @@ public class ArrayList {
     }
 
 
-
     public ArrayList(int capacity, int expansionFactor) {
         if (expansionFactor <= MAX_EXPANSION && expansionFactor > 0) {
             this.capacity = capacity;
