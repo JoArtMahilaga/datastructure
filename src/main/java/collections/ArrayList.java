@@ -12,9 +12,9 @@ public class ArrayList {
 
 
     public ArrayList(int capacity) {
-        if(capacity <= MAX_INTIAL_CAPACITY && capacity > 0){
+        if (capacity <= MAX_INTIAL_CAPACITY && capacity > 0) {
             this.capacity = capacity;
-        }else if (capacity > MAX_INTIAL_CAPACITY) {
+        } else if (capacity > MAX_INTIAL_CAPACITY) {
             this.capacity = MAX_INTIAL_CAPACITY;
         }
         data = new int[capacity];
@@ -29,7 +29,6 @@ public class ArrayList {
         }
         data = new int[capacity];
     }
-
 
 
     public void grow() {
@@ -54,4 +53,14 @@ public class ArrayList {
         numElements++;
     }
 
+
+    public int get(int index) {
+
+        if (index < 0 || index >= numElements) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        return data[index];
+
+
+    }
 }
